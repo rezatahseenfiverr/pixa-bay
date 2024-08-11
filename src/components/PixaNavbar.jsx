@@ -66,18 +66,30 @@ export default function PixaNavbar() {
       viewTransitionName: isTransitioning ? "slide" : "",
     };
   }} to="/contactus">
-            Contact Us
+            ContactUs
           </NavLink>
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <NavLink to="/login">Login</NavLink>
+          <NavLink style={({ isActive, isPending, isTransitioning }) => {
+    return {
+      fontWeight: isActive ? "bold" : "",
+      color: isPending ? "red" : "black",
+      viewTransitionName: isTransitioning ? "slide" : "",
+    };
+  }} to="/login">Login</NavLink>
         </NavbarItem>
         <NavbarItem>
-          <Button as={NavLink} color="warning" to="/signin" variant="flat">
-            Sign In
+          <Button as={NavLink} color="warning" to="/signin" variant="flat" style={({ isActive, isPending, isTransitioning }) => {
+    return {
+      fontWeight: isActive ? "bold" : "",
+      color: isPending ? "red" : "black",
+      viewTransitionName: isTransitioning ? "slide" : "",
+    };
+  }}>
+            SignIn
           </Button>
         </NavbarItem>
       </NavbarContent>
