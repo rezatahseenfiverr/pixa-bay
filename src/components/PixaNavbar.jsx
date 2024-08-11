@@ -37,17 +37,35 @@ export default function PixaNavbar() {
           <p className="font-bold text-inherit">PixaBay</p>
         </NavbarBrand>
         <NavbarItem>
-          <NavLink to="/">
+          <NavLink style={({ isActive, isPending, isTransitioning }) => {
+    return {
+      fontWeight: isActive ? "bold" : "",
+      color: isPending ? "red" : "black",
+      viewTransitionName: isTransitioning ? "slide" : "",
+    };
+  }} to="/">
             Home
           </NavLink>
         </NavbarItem>
         <NavbarItem isActive>
-          <NavLink to="/images">
+          <NavLink style={({ isActive, isPending, isTransitioning }) => {
+    return {
+      fontWeight: isActive ? "bold" : "",
+      color: isPending ? "red" : "black",
+      viewTransitionName: isTransitioning ? "slide" : "",
+    };
+  }} to="/images">
             Images
           </NavLink>
         </NavbarItem>
         <NavbarItem>
-          <NavLink to="/contactus">
+          <NavLink style={({ isActive, isPending, isTransitioning }) => {
+    return {
+      fontWeight: isActive ? "bold" : "",
+      color: isPending ? "red" : "black",
+      viewTransitionName: isTransitioning ? "slide" : "",
+    };
+  }} to="/contactus">
             Contact Us
           </NavLink>
         </NavbarItem>
@@ -69,6 +87,13 @@ export default function PixaNavbar() {
           
           <NavbarMenuItem key={`${item}-${index}`}>
             <NavLink
+              style={({ isActive, isPending, isTransitioning }) => {
+                return {
+                  fontWeight: isActive ? "bold" : "",
+                  color: isPending ? "red" : "black",
+                  viewTransitionName: isTransitioning ? "slide" : "",
+                };
+              }}
               className="w-full"
               color={
                 index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
