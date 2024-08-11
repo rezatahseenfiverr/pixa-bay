@@ -19,7 +19,7 @@ export default function SearchResults() {
 
     async function getImages(){
         setLoading(true);
-        const response = await fetch (`https://pixabay.com/api/?key=44890869-53c71b575531943d6b28f1839&q=Cars&image_type=photo&per_page=100`)
+        const response = await fetch (`https://pixabay.com/api/?key=${import.meta.env.VITE_MY_API}&q=Cars&image_type=photo&per_page=100`)
        
         const data = await response.json();
         setNewData(data.hits)
@@ -27,7 +27,7 @@ export default function SearchResults() {
       }
     async function getSearchImages(){
         setLoading(true);
-        const response = await fetch (`https://pixabay.com/api/?key=44890869-53c71b575531943d6b28f1839&q=${NewImages}&image_type=photo&per_page=100`)
+        const response = await fetch (`https://pixabay.com/api/?key=${import.meta.env.VITE_MY_API}&q=${NewImages}&image_type=photo&per_page=100`)
        
         const data = await response.json();
         setNewData(data.hits)

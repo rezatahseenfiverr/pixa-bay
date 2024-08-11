@@ -22,7 +22,7 @@ export default function Slider() {
 
     async function getImages(){
         setLoading(true);
-        const response = await fetch (`https://pixabay.com/api/?key=44890869-53c71b575531943d6b28f1839&q=Flowers&image_type=photo&per_page=15`)
+        const response = await fetch (`https://pixabay.com/api/?key=${import.meta.env.VITE_MY_API}&q=Flowers&image_type=photo&per_page=15`)
        
         const data = await response.json();
         setNewData(data.hits)
